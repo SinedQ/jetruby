@@ -1,1 +1,5 @@
-Режим вывода команд на экран (ECHO) включен.
+# Run this script  
+
+'''
+$ ruby jetruby.rb
+'''
