@@ -5,10 +5,8 @@ def ending_in_cs(word)
         puts "Ваше слово не заканчивается на CS, поэтому мы отзеркалим ваше слово: #{word.reverse}"
     end
 end
-
 def word
     puts 'Введите слово: '
     word = gets.chomp.downcase
 end
-
 puts ending_in_cs(word)

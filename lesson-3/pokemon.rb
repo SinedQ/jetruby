@@ -12,5 +12,4 @@ def pokemon
     end
     pokemon_list
 end
-
 pokemon
