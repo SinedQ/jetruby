@@ -1,0 +1,25 @@
+<%= form_with(model: @lab_report, url: lab_reports_path) do |form| %>
+<div style="text-align: center;padding: 10rem 0 15px 0;">
+  <div>
+    <label style="margin-right: 6rem;">Название лабораторной работы</label>
+    <input style="width: 25%;" type="text" name="lab_report[title]" id="lab_report_title">
+  </div>
+  <div>
+    <label style="margin-right: 15rem;">Описание</label>
+    <input style="width: 25%;height: 100px;" type="text" name="lab_report[description]" id="lab_report_description">
+  </div>
+  <div style="margin-bottom: 5rem;">
+    <label style="margin-right: 13rem;">Пользователь</label>
+    <select style="width: 25%;" name="lab_report[user_id]" id="lab_report_user_id">
+        <% @users.each do |user| %>
+      <option value="<%= user.id %>">
+      <%= user.first_name %> <%= user.last_name %>
+      </option>
+        <% end %>
+    </select>
+  </div>
+  <div class="actions">
+      <%= form.submit "Создать", style: 'border: 1px solid #535353; background-color: #ffffff; color: black' %>
+    </div>
+</div>
+<% end %>

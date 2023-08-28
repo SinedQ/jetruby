@@ -1,0 +1,50 @@
+<p style="color: green"><%= notice %></p>
+
+<div style="text-align:right; margin-right: 60px;">
+  <button style="border: 1px solid #535353;
+  background-color: #ffffff;">
+    <%= link_to "Создать пользователя", new_user_path,  style: 'color: black;' %>
+ </button>
+</div>
+
+<div>
+  <h1 style="text-align:center">Отчет лабораторных работ</h1>
+  <div style="margin-left: 60px; margin-right: 60px">
+  <button style="border: 1px solid #535353;
+  background-color: #ffffff;">
+  <%= link_to "Создать новый отчет", new_lab_report_path, style: 'color: black;' %>
+  </button>
+  </div>
+  
+  <div style="margin-left: 60px; margin-right: 60px">
+    <% @lab_reports.each do |lab_report| %>
+        <div>
+          <h5 style="margin-bottom: 0px;"> Название: <%= lab_report.title %></h5>
+          <p style="font-style: italic; margin-bottom: 5px; margin-top: 0px;">
+          Студент: <%= lab_report.user.first_name%> <%= lab_report.user.last_name%>(<%= lab_report.user.email%>)
+          </p>
+          <p style="font-weight: 900; font-size: 15px; margin-top: 0px;"><%= lab_report.description %></p>
+            <div style="display: flex; flex-wrap: wrap; margin-right: -5px; margin-left: -5px;">
+              <% if lab_report.grade.blank? %>
+                <div style="padding-right: 5px; padding-left: 5px;">
+                  <button style="border: 1px solid #535353;
+                  background-color: #ffffff;">
+                    <%= link_to 'Добавить оценку', add_grade_lab_report_path(lab_report), style: 'color: black;' %>
+                  </button>
+                </div>
+              <% else %>
+                <div style="padding-right: 5px; padding-left: 5px; margin-top: -8px;">
+                  <p style="font-weight: 900; font-size: 15px">Оценка: <%= lab_report.grade %></p>
+                </div>
+              <% end %>
+              <div style="padding-right: 5px; padding-left: 5px;">
+                <button style="border: 1px solid #535353;
+                background-color: #ffffff;">
+                  <%= link_to "Показать этот отчет", lab_report, style: 'color: black;' %>
+                </button>
+              </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+</div>

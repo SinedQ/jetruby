@@ -6,11 +6,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Minified version -->
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
+    <!-- Un-Minified version -->
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body style="grid-template-columns: 0;
+    margin: 0; 
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    text-align: left;
+    background-color: #ffffff;">
     <%= yield %>
   </body>
 </html>

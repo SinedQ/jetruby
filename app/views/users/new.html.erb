@@ -1,0 +1,13 @@
+<h1 style="text-align:center;">Новый Пользователь</h1>
+
+<div style="text-align:center;">
+<%= render "form", user: @user %>
+</div>
+
+<br>
+
+<div style="text-align:center;">
+  <%= link_to "Вернуться ко всем пользователям", users_path %>
+  <br>
+  <%= link_to "Вернуться к списку лабораторных работ", lab_reports_path %>
+</div>
