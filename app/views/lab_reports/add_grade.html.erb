@@ -1,0 +1,17 @@
+<%= form_with(model: @lab_report, url: update_grade_lab_report_path) do |form| %>
+<div style="text-align: center; padding: 10rem 0 15px 0;">
+  <label style="margin-right: 12rem;">Оценка</label>
+  <select style="width: 20%;" name="lab_report[grade]" id="lab_report_grade">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    <option value="FX">FX</option>
+    <option value="F">F</option>
+  </select>
+</div>
+<div style="text-align: center;">
+    <%= form.submit "Сохранить", style: 'border: 1px solid #535353; background-color: #ffffff; color: black' %>
+  </div>
+<% end %>
